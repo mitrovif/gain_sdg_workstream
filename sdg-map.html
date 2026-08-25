@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <title>Displacement SDG Map</title>
+<script>if(/[?#&]embed/.test(location.href))document.documentElement.classList.add('embed');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -114,6 +115,8 @@ svg{display:block;width:100%;height:auto}
 .row .tot{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;width:22px;text-align:right;font-variant-numeric:tabular-nums}
 .row .md{font-size:9px;font-family:"IBM Plex Mono",monospace;color:var(--micro);width:26px;text-align:right}
 .kpis{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+html.embed .eyebrow,html.embed h1,html.embed .sub,html.embed .kpis{display:none}
+html.embed .wrap{padding-top:12px}
 .kpi{flex:1;min-width:90px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 12px;box-shadow:var(--shadow)}
 .kpi b{display:block;font-size:1.5rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
 .kpi span{font-size:11px;color:var(--ink-soft)}
