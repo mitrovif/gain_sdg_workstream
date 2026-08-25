@@ -1,0 +1,44 @@
+country,sdg,indicator,refugee_value,host_value,year,source,method
+Cameroon,2.1.2,Food insecurity,51%,32%,2024,UNHCR CMR Profiling,rCSI level 3 weighted (IDP vs host)
+South Sudan,2.1.2,Food insecurity,90%,90%,2023,UNHCR SSD FDS,WFP FCS<=35 weighted
+South Sudan,6.1.1,Improved drinking water,97%,86%,2023,UNHCR SSD FDS,JMP improved source (BD01) weighted
+South Sudan,6.2.1,Improved sanitation,58%,18%,2023,UNHCR SSD FDS,JMP improved facility (SAN01) weighted
+South Sudan,16.9.1,Birth registration u5,62%,27%,2023,UNHCR SSD FDS,roster HH_07b under-5 weighted
+South Sudan,4.1.2,School attendance 6-17,81%,47%,2023,UNHCR SSD FDS,roster HH_Educ02a age 6-17 weighted
+Pakistan,2.1.2,Food insecurity,47%,33%,2024,UNHCR PAK FDS,WFP FCS<=35 weighted
+Pakistan,6.1.1,Improved drinking water,79%,81%,2024,UNHCR PAK FDS,JMP improved source (BD01) weighted
+Pakistan,6.2.1,Improved sanitation,74%,95%,2024,UNHCR PAK FDS,JMP improved facility (SAN01) weighted
+Pakistan,8.5.2,Unemployment rate,11%,9%,2024,UNHCR PAK FDS,ILO: employed(EMP01-05) vs sought(EMP25a)+available(EMP29); labour force
+Pakistan,16.9.1,Birth registration u5,42%,86%,2024,UNHCR PAK FDS,roster HH_07b under-5 weighted
+DR Congo,6.1.1,Improved drinking water,30%,38% host,2023,UNHCR COD Kasai Profiling,JMP source (s06q15) unweighted; IDP value
+DR Congo,6.2.1,Improved sanitation,8%,6% host,2023,UNHCR COD Kasai Profiling,JMP facility (s06q25) unweighted; IDP value
+Zambia,2.1.2,Food insecurity,76%,76% host,2025,UNHCR ZAM FDS,WFP FCS<=35 weighted (.rds)
+Zambia,6.1.1,Improved drinking water,98%,75% host,2025,UNHCR ZAM FDS,JMP source (BD01) weighted
+Zambia,6.2.1,Improved sanitation,75%,29% host,2025,UNHCR ZAM FDS,JMP facility (SAN01) weighted
+Kenya,6.1.1,Improved drinking water,99%,100% host,2021,WB-UNHCR KEN RHHS,JMP source (e09) weighted; refugee vs host strata
+Kenya,6.2.1,Improved sanitation,97%,94% host,2021,WB-UNHCR KEN RHHS,JMP facility (e10) weighted; refugee vs host strata
+Ecuador,2.1.2,Food insecurity (ran-out-of-food),42%,n/a (Venezuelans only),2021,WB ECU HFPS-VEN,ran out of food 30d (u04_01); unweighted; Venezuelan migrants
+Bangladesh,2.1.2,Food insecurity (reduced meals),31%,32% host,,WB BGD CBPS-HFT R3,reduced/skipped meals (fs_fewer_meals_r3) weighted; Rohingya camp vs host
+Somalia,6.1.1,Improved drinking water,84%,89% host,2016,WB SOM SHFS-W1,JMP source (drink_water) weighted; IDP vs urban/rural host
+Somalia,6.2.1,Improved sanitation,24%,81% host,2016,WB SOM SHFS-W1,JMP facility (toilet_type) weighted; IDP vs host
+South Sudan,7.1.1,Access to electricity,1%,1%,2023,UNHCR SSD FDS,"HE01 in 1-6 (excl none/torch), wgh_samp_resc_pop"
+Pakistan,7.1.1,Access to electricity,62%,66%,2024,UNHCR PAK FDS,"C070101 SDG7.1.1 tier1+, wgh_strata_spec"
+Zambia,7.1.1,Access to electricity,24%,13%,2025,UNHCR ZAM FDS,"C070101 SDG7.1.1 tier1+, wgh_strata_spec"
+Kenya,7.1.1,Access to electricity,99%,98%,2021,WB-UNHCR KEN RHHS,"electricity var, weight"
+Cameroon,7.1.1,Access to electricity,95%,93%,2025,UNHCR CMR Profiling,"AEQ0 grid access, WEIGHT_FINAL"
+Malawi,7.1.1,Access to electricity,25%,16%,2024,Malawi DHS 2024,"hv206 by shcamps, shv005/hv005 weight"
+Malawi,4.1.2,School attendance,87%,86%,2024,Malawi DHS 2024,hv121>0 ages 6-17 by shcamps
+Lebanon,6.1.1,Access to drinking water,100%,,2011,MICS 2011 Lebanon (Palestinians),"WS1 improved source, hhweight"
+Lebanon,6.2.1,Sanitation,98%,,2011,MICS 2011 Lebanon (Palestinians),WS8 improved not shared
+Lebanon,7.1.1,Access to electricity,100%,,2011,MICS 2011 Lebanon (Palestinians),HC8A=1
+Lebanon,4.1.2,School attendance,84%,,2011,MICS 2011 Lebanon (Palestinians),ED5 attending ages 6-17
+Lebanon,11.1.1,Overcrowding,19%,,2011,MICS 2011 Lebanon (Palestinians),>3 persons per sleeping room
+Lebanon,16.9.1,Birth registration,98%,,2011,MICS 2011 Lebanon (Palestinians),BR1/BR2 under-5
+Nigeria,4.1.2,School attendance,70%,74%,2018,WB-UNHCR Nigeria IDP survey,"B_4_3 current attendance ages 6-17 by migr_idp, weighted"
+Malawi,2.2.1,Child stunting (under-5),34%,38%,2024,Malawi DHS 2024 (shcamps refugee flag),hc70 < -200 (below -2SD) weighted; refugee camp vs host
+Mozambique,1.4.2,Secure/documented tenure,17%,58%,2025,JIPS/UN-HABITAT Pemba profiling 2025,S6Q5 documented tenure; IDP camp vs non-displaced; weighted
+Mozambique,11.1.1,Overcrowding (>3/room),12%,2%,2025,JIPS/UN-HABITAT Pemba profiling 2025,HHsize/rooms; IDP camp vs non-displaced
+Mozambique,7.1.1,Electricity access,37%,78%,2025,JIPS/UN-HABITAT Pemba profiling 2025,S7Q11 grid/solar/generator; IDP camp vs non-displaced
+Mozambique,6.1.1,Basic drinking water,67%,82%,2025,JIPS/UN-HABITAT Pemba profiling 2025,S7Q7 improved + <=30min; IDP camp vs non-displaced
+Mozambique,16.1.4,Feel safe (day),90%,98%,2025,JIPS/UN-HABITAT Pemba profiling 2025,S8Q2 very/fairly safe; IDP camp vs non-displaced
+Mozambique,10.3.1,Discrimination,6%,5%,2025,JIPS/UN-HABITAT Pemba profiling 2025,S11Q2 experienced discrimination; IDP camp vs non-displaced

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAIN SDG Workstream</title>
+<meta name="description" content="SDG indicators for refugees, IDPs and stateless people, from GAIN examples — EGRISS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#f4f6f8;--panel:#ffffff;--ink:#12161c;--soft:#586274;--faint:#8b95a5;--line:#e5e9ef;--accent:#0072BC;--accent2:#00a3d9;--gold:#c8912f;--green:#2e9e6b;--shadow:0 1px 2px rgba(18,22,28,.04),0 14px 40px rgba(18,22,28,.08)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1015;--panel:#161b22;--ink:#eef2f7;--soft:#a6b0be;--faint:#69727f;--line:#262d37;--accent:#4aa8de;--accent2:#00a3d9;--gold:#e0b24e;--green:#3ec98d;--shadow:0 1px 2px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--bg:#0d1015;--panel:#161b22;--ink:#eef2f7;--soft:#a6b0be;--faint:#69727f;--line:#262d37;--accent:#4aa8de;--accent2:#00a3d9;--gold:#e0b24e;--green:#3ec98d;--shadow:0 1px 2px rgba(0,0,0,.5),0 16px 44px rgba(0,0,0,.45)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding:46px 22px 90px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.025em;margin:.18em 0 .12em;line-height:1.03;text-wrap:balance}
+.lede{color:var(--soft);font-size:1.08rem;max-width:64ch;margin:.2em 0 0}
+.lede a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:30px 0 34px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.kpi b i{font-style:normal;font-size:.5em;color:var(--faint);font-weight:600}
+.kpi span{font-size:12px;color:var(--soft);margin-top:5px;display:block}
+.maphero{display:block;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:var(--panel);text-decoration:none;color:inherit}
+.maphero .frame{height:520px;border:0;width:100%;display:block;background:var(--bg)}
+.maphero .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+.maphero .bar b{font-size:1rem;font-weight:700}
+.maphero .bar span{font-size:12.5px;color:var(--soft)}
+.open{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:#fff;background:var(--accent);border-radius:8px;padding:8px 14px;white-space:nowrap}
+h2{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;margin:44px 0 4px}
+.note{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin:0 0 16px}
+.find{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:1rem}
+.card p{margin:0;color:var(--soft);font-size:13.5px}
+.prio{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;border-radius:20px;padding:5px 11px;border:1px solid var(--line);background:var(--panel);color:var(--soft)}
+.pill.have{background:color-mix(in srgb,var(--green) 15%,transparent);border-color:color-mix(in srgb,var(--green) 40%,transparent);color:var(--ink)}
+.pill.have::before{content:"◆ ";color:var(--gold)}
+.pill.gap{opacity:.85}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.res a{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px 14px;text-decoration:none;color:var(--ink);font-size:13.5px;box-shadow:var(--shadow)}
+.res a .ic{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:700;color:var(--accent)}
+.res a small{color:var(--faint);display:block;font-size:11.5px}
+footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.7}
+@media(max-width:640px){.kpis,.find,.res{grid-template-columns:1fr 1fr}.maphero .frame{height:380px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">EGRISS · GAIN</div>
+  <h1>SDG indicators for the forcibly displaced</h1>
+  <p class="lede">A living picture of comparable SDG indicators for <b>refugees, IDPs and stateless people</b>, drawn from GAIN examples — <b>government-produced where possible, data year 2018 onward</b>, and read against the 14 priority indicators in <a href="https://egrisstats.org">EGRISS Methodological Paper 3</a>.</p>
+
+  <div class="kpis">
+    <div class="kpi"><b>27</b><span>countries</span></div>
+    <div class="kpi"><b>85</b><span>SDG values<br><b style="color:var(--ink)">56</b> priority</span></div>
+    <div class="kpi"><b>12<i>/14</i></b><span>priority indicators</span></div>
+    <div class="kpi"><b>58<i>%</i></b><span>government-produced</span></div>
+  </div>
+
+  <a class="maphero" href="sdg-map.html">
+    <iframe class="frame" src="sdg-map.html" title="Interactive SDG map" loading="lazy"></iframe>
+    <div class="bar"><div><b>Interactive map</b><br><span>Hover any country for its indicators, grouped by population</span></div><span class="open">Open full ↗</span></div>
+  </a>
+
+  <h2>The 14 priority indicators</h2>
+  <p class="note">EGRISS Paper 3 · ◆ = on the map</p>
+  <div class="prio">
+    <span class="pill have">1.2.1 poverty</span><span class="pill have">1.4.2 land tenure</span><span class="pill have">2.2.1 stunting</span><span class="pill have">3.1.2 skilled birth</span><span class="pill have">6.1.1 water</span><span class="pill have">7.1.1 electricity</span><span class="pill have">8.3.1 informal work</span><span class="pill have">8.5.2 unemployment</span><span class="pill have">10.3.1 discrimination</span><span class="pill have">11.1.1 housing</span><span class="pill have">16.1.4 safety</span><span class="pill have">16.9.1 legal identity</span>
+    <span class="pill gap">4.1.1 learning</span><span class="pill gap">16.b.1 equal treatment</span>
+  </div>
+
+  <h2>Data &amp; methodology</h2>
+  <p class="note">Every value is traceable to its GAIN example</p>
+  <div class="res">
+    <a href="data/gain_sdg_values_calculated.csv"><span class="ic">CSV</span><div>Calculated values<small>computed from microdata, with host + method</small></div></a>
+    <a href="data/gain_sdg_values_promoted.csv"><span class="ic">CSV</span><div>Report-extracted values<small>with source, page, population</small></div></a>
+    <a href="data/GAIN_SDG_methodology_record.md"><span class="ic">MD</span><div>Methodology record<small>how each indicator was derived, per survey</small></div></a>
+    <a href="data/census_sdg_tabulation_targets.csv"><span class="ic">CSV</span><div>Outreach targets<small>NSOs to ask for a custom tabulation</small></div></a>
+  </div>
+
+  <footer>
+    Values are <b>computed</b> from microdata, <b>extracted</b> from official reports, or <b>estimated</b> (labelled per card). Scope: GAIN examples · government-produced where possible · data year 2018+ (post-IRRS). A ◆ marks an EGRISS priority indicator; a ✻ marks a value from a GAIN example. Built by the EGRISS Secretariat · GAIN. Not for redistribution of underlying micro-level data.
+  </footer>
+</div>
+</body>
+</html>

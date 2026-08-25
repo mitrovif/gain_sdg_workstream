@@ -1,0 +1,55 @@
+country,sdg,value,population,method,page,source,note
+Cameroon,2.1.2,51%,IDP (vs 32% host),computed,,UNHCR_CMR_2024_PROFILING microdata,rCSI level 3 by household status
+Jordan,8.5.2,21.4%,national (incl. non-Jordanians),extracted,,Jordan DOS LFS 2024,headline unemployment
+Egypt,1.2.1,65%,refugees,extracted,29,EVAR 2025 (WFP-CAPMAS),majority of refugee HHs high vulnerability
+Colombia,1.2.1,49.7%,victims/displaced (urban),extracted,3,DANE differential poverty 2024,monetary poverty in cabeceras
+Honduras,1.2.1,45%,IDP,extracted,6,INE Estudio Poblacion Desplazada,poverty probability displaced
+Honduras,2.1.2,46%,IDP,extracted,49,INE Estudio Poblacion Desplazada,food insecurity higher among displaced
+Honduras,4.1.2,80%,displaced,extracted,37,INE Estudio Poblacion Desplazada,literacy (8 in 10)
+Honduras,6.1.1,59%,displaced,extracted,35,INE Estudio Poblacion Desplazada,basic services access
+Somalia,1.2.1,63%,IDP (vs 45% host),extracted,37,WB-UNHCR JDC Somalia,multidimensionally poor
+Somalia,6.2.1,70%,IDP,extracted,31,WB-UNHCR JDC Somalia,open defecation >70%
+Somalia,11.1.1,75%,IDP,extracted,24,WB-UNHCR JDC Somalia,IDPs residing in urban areas
+State of Palestine,8.5.2,42.2%,"refugees (State of Palestine total; WB 29.2%, Gaza 66.1%)",extracted,2,PCBS,total refugee unemployment
+Uganda,6.1.1,91%,refugee HHs,extracted,17,UBOS,improved drinking water access
+United Kingdom,11.1.1,69%,resettled refugees,extracted,3,Home Office integration report,adequate bedrooms (not overcrowded)
+Peru,6.1.1,89%,Venezuelans,extracted,,INEI Condiciones de Vida Poblacion Venezolana 2024,water access
+Peru,11.1.1,15%,Venezuelans,extracted,20,INEI Condiciones de Vida Poblacion Venezolana 2024,overcrowding (hacinamiento)
+Uganda,4.1.2,71%,refugee (vs 78% national),extracted,36,UBOS Uganda National Household Survey,primary net enrolment refugee sample
+Egypt,2.1.2,58%,refugees,extracted,30,EVAR 2025 (WFP-CAPMAS),moderately or severely food insecure
+Nigeria,7.1.1,61%,IDP,extracted,28,NBS Report of IDPs in Nigeria,38.9% of IDP communities lack electricity access
+Burkina Faso,1.2.1,93%,IDP (vs 75% host),extracted,33,INSD ESEP-PDI,multidimensional poverty incidence (92.6%)
+Burkina Faso,2.1.2,76%,IDP,extracted,37,INSD ESEP-PDI,moderate/severe food insecurity (75.6%)
+Mexico,4.1.2,74%,"IDP (violence-displaced, vs comparison HHs)",extracted,48,ECADEFI Chihuahua 2021 (INEGI/JIPS/ACNUR),26.4% of displaced 6-15 not attending -> 74% attend
+DR Congo,2.1.2,95%,IDP (PDI),extracted,166,INS/UNHCR ECVM-PDF 2024,moderate+severe food insecurity (Tableau 20-2)
+DR Congo,7.1.1,15%,IDP (PDI),extracted,157,INS/UNHCR ECVM-PDF 2024,"electricity access, national IDP (Tableau 19-6)"
+Moldova,11.1.1,12%,Ukrainian refugees (temporary protection),extracted,table 3.9,Moldova PHC 2024 (BNS),share in collective accommodation (vs 88% individual housing)
+Kenya,7.1.1,97%,stateless (Shona),extracted,35,Shona Socioeconomic Survey 2024 (UNHCR),83% grid + 14% solar electricity for lighting
+Malawi,6.1.1,30%,"refugees (Dzaleka, vs 73% Malawi)",extracted,,Malawi DHS 2024 / JDC Dzaleka,basic drinking water
+Malawi,6.2.1,76%,"refugees (Dzaleka, vs 40% Malawi)",extracted,,Malawi DHS 2024 / JDC Dzaleka,basic sanitation
+Malawi,16.9.1,92%,"refugees (Dzaleka, vs 78% Malawi)",extracted,,Malawi DHS 2024 / JDC Dzaleka,birth registration under-5
+Uganda,6.2.1,29%,refugees (settlements),extracted,385,UDHS 2022 (Ch.20),improved toilet facility
+Uganda,7.1.1,4%,refugees (settlements),extracted,390,UDHS 2022 (Ch.20),households with electricity (4.3%)
+Lebanon,6.2.1,91%,displaced Syrians (settlements) 2023,extracted,30,Lebanon MICS 2023 Subnational,7% sewer + 84% onsite; 5% open defecation
+Lebanon,6.1.1,88%,displaced Syrians (settlements) 2023,extracted,29,Lebanon MICS 2023 Subnational,basic drinking water
+Lebanon,6.2.1,100%,Palestinian camps 2023,extracted,30,Lebanon MICS 2023 Subnational,97% sewer (validates 2011 computed 98%)
+Rwanda,4.1.2,90%,refugees,extracted,60,NISR RPHC2022 Refugees Thematic,school attendance 7-18
+Rwanda,6.1.1,84%,refugees,extracted,103,NISR RPHC2022 Refugees Thematic,improved drinking water
+Rwanda,6.2.1,94%,refugees,extracted,104,NISR RPHC2022 Refugees Thematic,improved toilet facility
+Rwanda,7.1.1,41%,refugees,extracted,106,NISR RPHC2022 Refugees Thematic,solar 24% + grid 17.4%
+Rwanda,16.9.1,86%,refugees (vs 94% resident),extracted,79,NISR RPHC2022 Refugees Thematic,birth registration 0-17
+Morocco,6.1.1,99%,refugees,extracted,33,HCP Refugee Survey 2022,housing connected to water network (99.4%)
+Morocco,6.2.1,99%,refugees,extracted,33,HCP Refugee Survey 2022,connected to sanitation network
+Morocco,7.1.1,99%,refugees,extracted,33,HCP Refugee Survey 2022,connected to electricity network
+Morocco,8.5.2,20%,refugees,extracted,18,HCP Refugee Survey 2022,~1 in 5 refugees unemployed
+Kenya,6.1.1,87%,stateless (Shona),extracted,44,Shona Socioeconomic Survey 2024,improved drinking water
+Kenya,6.2.1,89%,stateless (Shona),extracted,45,Shona Socioeconomic Survey 2024,improved sanitation
+Kenya,7.1.1,97%,stateless (Shona),extracted,46,Shona Socioeconomic Survey 2024,grid 83% + solar 14%
+Lebanon,6.1.1,88%,Syrian refugees (settlements),extracted,29,Lebanon MICS 2023 Subnational (CAS),basic drinking water
+Lebanon,6.2.1,91%,Syrian refugees (settlements),extracted,30,Lebanon MICS 2023 Subnational (CAS),7% sewer + 84% onsite; 5% open defecation
+Uganda,3.1.2,98%,refugees (settlements),extracted,388,Uganda DHS 2022 (UBOS),skilled birth attendance in refugee settlements
+Morocco,16.1.4,70%,refugees,extracted,,Morocco HCP 2022 refugee study,"7 réfugiés sur 10 se sentent en sécurité (feeling safe)"
+Nigeria,10.3.1,41%,IDPs (rural camps),extracted,18,Nigeria NBS IDP Survey 2023,"40.6% of rural-camp households face discrimination by host community/camp workers"
+Italy,8.3.1,17%,refugees,extracted,78,FIERI-UNHCR refugee survey 2024 (Istat stats),"17% of employee refugees in fully/partially irregular work"
+Italy,10.3.1,45%,refugees,extracted,31,FIERI-UNHCR refugee survey 2024 (Istat stats),"45% ever discriminated (lifetime, not 12-mo); reasons nationality/skin colour"
+Italy,1.2.1,67%,refugees,extracted,53,FIERI-UNHCR refugee survey 2024 (Istat stats),"67% at risk of poverty (EUROSTAT relative measure)"
