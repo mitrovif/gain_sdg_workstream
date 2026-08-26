@@ -3,14 +3,14 @@
 <script>if(/[?#&]embed/.test(location.href))document.documentElement.classList.add('embed');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
 :root{
-  --bg:#eef2f6; --panel:#ffffff; --ink:#132030; --ink-soft:#52627a; --ink-faint:#8494a8;
+  --bg:#eef2f6; --panel:#ffffff; --ink:#14234c; --ink-soft:#52627a; --ink-faint:#8494a8;
   --line:#e0e6ee; --ocean:#eaf1f7; --graticule:#d5e2ee; --land:#d7e4f0; --land-line:#bccfe0;
-  --c0:#cfe1f0; --c1:#8dbde0; --c2:#4d9bd4; --c3:#0072BC; --c4:#00426e; /* EGRISS blue ramp */
-  --micro:#00b39a; --accent:#0072BC;
-  --fill-calc:#0072BC; --fill-rep:#77b0d8; --fill-data:#c7dcec; --fill-hover:#004e82;
+  --c0:#cfe1f0; --c1:#8dbde0; --c2:#4d9bd4; --c3:#3b71b9; --c4:#072d62; /* EGRISS blue ramp */
+  --micro:#4cc3c9; --accent:#3b71b9;
+  --fill-calc:#3b71b9; --fill-rep:#77b0d8; --fill-data:#c7dcec; --fill-hover:#072d62;
   --shadow:0 1px 2px rgba(19,32,48,.05),0 14px 34px rgba(19,32,48,.09);
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -28,8 +28,8 @@
   --micro:#2fd0b0; --accent:#4aa6e6;
   --fill-calc:#3f97cf; --fill-rep:#2b6d95; --fill-data:#204c68; --fill-hover:#6fc0f0; --shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px rgba(0,0,0,.45);
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box} h1,h2,h3,.kpi b{font-family:"Figtree","IBM Plex Sans",system-ui,sans-serif;letter-spacing:-.015em}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1160px;margin:0 auto;padding:28px 20px 70px}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600}
 h1{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:.15em 0 .1em}
@@ -47,11 +47,11 @@ svg{display:block;width:100%;height:auto}
 .legend .mk{display:inline-flex;align-items:center;gap:6px}
 .legend .mk .d{width:9px;height:9px;border-radius:50%;background:var(--micro);box-shadow:0 0 0 2px var(--panel)}
 .legend .sw{width:14px;height:14px;border-radius:3px;display:inline-block;vertical-align:-3px;margin-right:5px;border:1px solid var(--land-line)}
-.bub{cursor:pointer}
+.bub{cursor:pointer} .cdot{stroke:var(--panel);stroke-width:1.6;cursor:pointer;transition:r .12s,fill .12s;filter:drop-shadow(0 1px 1.5px rgba(19,32,48,.35))} .cdot-calc{fill:var(--fill-calc)}.cdot-rep{fill:var(--fill-rep)}.cdot-data{fill:var(--fill-data)} .bub:hover .cdot{r:8.2;fill:var(--fill-hover)}
 .cpath{transition:fill .12s}
 .bub:hover .cpath{fill:var(--fill-hover)}
-.lbl{font-family:"Archivo",sans-serif;font-weight:600;font-size:8.5px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--panel);stroke-width:2.6px;stroke-linejoin:round}
-.region{font-family:"Archivo";font-weight:700;font-size:12px;fill:var(--ink-faint);opacity:.5;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.lbl{font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:8.5px;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--panel);stroke-width:2.6px;stroke-linejoin:round}
+.region{font-family:"IBM Plex Sans";font-weight:700;font-size:12px;fill:var(--ink-faint);opacity:.5;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);padding:13px 14px;border-radius:13px;font-size:12px;line-height:1.4;opacity:0;transform:translate(-50%,-104%);transition:opacity .12s;z-index:5;box-shadow:0 14px 38px rgba(0,0,0,.5);width:330px}
 .tip .hd{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
 .tip .hd b{font-size:16px;font-weight:800;letter-spacing:-.01em}
@@ -66,7 +66,7 @@ svg{display:block;width:100%;height:auto}
 .grp-h.poth{color:#aeb6c2}
 .tip .srow{display:flex;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.07)}
 .tip .grp-h + .srow{border-top:0}
-.tip .scard{width:34px;height:34px;border-radius:5px;flex:none;display:grid;place-items:center;color:#fff;font-family:"Archivo";font-weight:800;font-size:15px}
+.tip .scard{width:34px;height:34px;border-radius:5px;flex:none;display:grid;place-items:center;color:#fff;font-family:"IBM Plex Sans";font-weight:800;font-size:15px}
 .tip img.scard{object-fit:cover;overflow:hidden}
 .tip .sbody{flex:1;min-width:0}
 .tip .stop{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
@@ -94,7 +94,7 @@ svg{display:block;width:100%;height:auto}
 .rd b{color:var(--ink);font-weight:600}
 .rd>div{flex:1}
 .rdk{flex:none;width:52px;display:flex;align-items:center;justify-content:center}
-.rdk.sq{width:26px;height:26px;border-radius:5px;color:#fff;font-family:"Archivo";font-weight:800;font-size:14px}
+.rdk.sq{width:26px;height:26px;border-radius:5px;color:#fff;font-family:"IBM Plex Sans";font-weight:800;font-size:14px}
 .rdk.val{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:15px;color:var(--ink)}
 .rdk.gh{font-family:"IBM Plex Mono",monospace;font-size:8px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#2f80c0}
 .rdk.pt{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;color:#2e9e6b}
@@ -347,8 +347,8 @@ WORLD.forEach(f=>{ if(f.n==="Antarctica")return; const idx=geoToIdx[f.n];
 g+=`<path d="${land}" fill="var(--land)" stroke="var(--land-line)" stroke-width="0.5" stroke-linejoin="round" fill-rule="evenodd"/>`;
 dataFeats.forEach(([f,idx])=>{ const tr=tier(D[idx][0])||"data";
   g+=`<g class="bub" data-i="${idx}"><path class="cpath" d="${featPath(f)}" fill="${TIERFILL[tr]}" stroke="var(--panel)" stroke-width="0.6" stroke-linejoin="round" fill-rule="evenodd"/></g>`; });
-[["LATIN AMERICA",-18,-62],["EUROPE",60,20],["W. AFRICA",7,-9],["E. AFRICA",1,40],["MENA",29,46],["S. & S-E ASIA",16,102]].forEach(([t,la,lo])=>{const q=proj(lo,la);g+=`<text class="region" x="${q[0]}" y="${q[1]}" text-anchor="middle">${t}</text>`;});
-D.forEach((d,i)=>{ if(!tier(d[0]))return; const q=proj(d[2],d[1]); g+=`<text class="lbl" x="${q[0].toFixed(1)}" y="${q[1].toFixed(1)}" text-anchor="middle">${SHORT[d[0]]||d[0]}</text>`; });
+dataFeats.forEach(([f,idx])=>{ const tr=tier(D[idx][0])||"data"; const c=proj(D[idx][2],D[idx][1]); g+=`<g class="bub" data-i="${idx}"><circle class="cdot cdot-${tr}" cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="5.4"/></g>`; }); [["LATIN AMERICA",-18,-62],["EUROPE",60,20],["W. AFRICA",7,-9],["E. AFRICA",1,40],["MENA",29,46],["S. & S-E ASIA",16,102]].forEach(([t,la,lo])=>{const q=proj(lo,la);g+=`<text class="region" x="${q[0]}" y="${q[1]}" text-anchor="middle">${t}</text>`;});
+D.forEach((d,i)=>{ if(!tier(d[0]))return; const q=proj(d[2],d[1]); g+=`<text class="lbl" x="${q[0].toFixed(1)}" y="${(q[1]+13).toFixed(1)}" text-anchor="middle">${SHORT[d[0]]||d[0]}</text>`; });
 svg.innerHTML=g;
 const rows=D;
 const WPX=()=>wrap.getBoundingClientRect().width;
