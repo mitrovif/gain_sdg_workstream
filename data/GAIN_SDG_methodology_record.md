@@ -210,3 +210,17 @@ statelessness): 1.2.1, 1.4.2, 2.2.1, 3.1.2, 4.1.1, 5.1.1, 6.1.1, 7.1.1, 8.3.1, 8
 
 Indicator names updated to official/EGRISS titles; official UN SDG icons embedded (data-URI) as
 the card badges.
+
+## §12 — SDG 6.1.1 drinking water: two definitions on the map
+
+SDG 6.1.1 is **safely managed** drinking water: an improved source, accessible on
+premises, available when needed, and **free from contamination (E. coli test)**. Where a
+survey publishes that full definition — MICS with water-quality testing, e.g. Lebanon MICS
+2023 (Syrian settlements 7%, Palestinian camps 8%) — the map shows the safely-managed value.
+
+Everywhere else the value is **computed from microdata that cannot test water quality**
+(UNHCR FDS, DHS, World Bank household surveys). There we use the **basic-water proxy** —
+an improved source within a ≤30-minute round trip — which is systematically higher than
+safely-managed. On the map these values carry an **asterisk (\*)** and the card's source line
+reads "basic drinking water." A basic-water 6.1.1 (e.g. Morocco 99%) is therefore **not
+directly comparable** to a safely-managed 6.1.1 (Lebanon 7%).
