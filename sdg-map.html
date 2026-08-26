@@ -7,7 +7,7 @@
 <style>
 :root{
   --bg:#eef2f6; --panel:#ffffff; --ink:#14234c; --ink-soft:#52627a; --ink-faint:#8494a8;
-  --line:#e0e6ee; --ocean:#eaf1f7; --graticule:#d5e2ee; --land:#d7e4f0; --land-line:#bccfe0;
+  --line:#e0e6ee; --ocean:#eaf1f7; --graticule:#d5e2ee; --land:#d7e4f0; --hasdata:#c6d9ef; --land-line:#bccfe0;
   --c0:#cfe1f0; --c1:#8dbde0; --c2:#4d9bd4; --c3:#3b71b9; --c4:#072d62; /* EGRISS blue ramp */
   --micro:#4cc3c9; --accent:#3b71b9;
   --fill-calc:#3b71b9; --fill-rep:#77b0d8; --fill-data:#c7dcec; --fill-hover:#072d62;
@@ -15,7 +15,7 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0c1119; --panel:#151c26; --ink:#eef1f5; --ink-soft:#a3adba; --ink-faint:#6b7684;
-  --line:#26303c; --ocean:#0d1621; --graticule:#1b2a38; --land:#1a2734; --land-line:#2a3947;
+  --line:#26303c; --ocean:#0d1621; --graticule:#1b2a38; --land:#1a2734; --hasdata:#213247; --land-line:#2a3947;
   --c0:#1b3a52; --c1:#246486; --c2:#3f97cf; --c3:#4aa6e6; --c4:#9ad4f2;
   --micro:#2fd0b0; --accent:#4aa6e6;
   --fill-calc:#3f97cf; --fill-rep:#2b6d95; --fill-data:#204c68; --fill-hover:#6fc0f0;
@@ -23,7 +23,7 @@
 }}
 :root[data-theme="dark"]{
   --bg:#0c1119; --panel:#151c26; --ink:#eef1f5; --ink-soft:#a3adba; --ink-faint:#6b7684;
-  --line:#26303c; --ocean:#0d1621; --graticule:#1b2a38; --land:#1a2734; --land-line:#2a3947;
+  --line:#26303c; --ocean:#0d1621; --graticule:#1b2a38; --land:#1a2734; --hasdata:#213247; --land-line:#2a3947;
   --c0:#1b3a52; --c1:#246486; --c2:#3f97cf; --c3:#4aa6e6; --c4:#9ad4f2;
   --micro:#2fd0b0; --accent:#4aa6e6;
   --fill-calc:#3f97cf; --fill-rep:#2b6d95; --fill-data:#204c68; --fill-hover:#6fc0f0; --shadow:0 1px 2px rgba(0,0,0,.5),0 14px 34px rgba(0,0,0,.45);
@@ -114,7 +114,7 @@ svg{display:block;width:100%;height:auto}
 .row .mini .g{background:var(--accent)}.row .mini .o{background:var(--ink-faint)}
 .row .tot{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;width:22px;text-align:right;font-variant-numeric:tabular-nums}
 .row .md{font-size:9px;font-family:"IBM Plex Mono",monospace;color:var(--micro);width:26px;text-align:right}
-.kpis{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}.pmix{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:7px;width:100%;gap:1px}.pmix i{display:block;height:100%}.pm-gov{background:var(--accent)}.pm-un{background:var(--micro)}.pm-wb{background:var(--ink-faint)}.pm-ji{background:var(--gold)}
 .brandbar{display:flex;align-items:center;justify-content:space-between;margin:0 0 14px}.brandbar .egr{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.12em;font-size:15px;color:var(--ink)}.egr-logo .egr-lt,.egr-logo .egr-dk{height:40px;width:auto;display:block}.egr-logo .egr-dk{display:none}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .egr-logo .egr-lt{display:none}:root:not([data-theme="light"]) .egr-logo .egr-dk{display:block}}:root[data-theme="dark"] .egr-logo .egr-lt{display:none}:root[data-theme="dark"] .egr-logo .egr-dk{display:block}:root[data-theme="light"] .egr-logo .egr-dk{display:none}.brandbar .sdgw{height:46px;width:auto;display:block}.brandbar{gap:20px;padding:2px 0 16px;border-bottom:1px solid var(--line);margin-bottom:24px}.blink{flex:1;min-width:54px;height:1px;position:relative;background:linear-gradient(90deg,transparent,var(--line) 22%,var(--line) 78%,transparent)}.blink .blabel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:0 12px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}html.embed .brandbar{display:none}.footbrand{display:flex;align-items:center;gap:10px;margin-top:12px}.footbrand img{height:34px;width:auto}.footbrand span{font-size:11.5px;color:var(--ink-faint)}
 .ctrlbar{display:flex;justify-content:flex-end;margin:0 0 8px}
 .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;box-shadow:var(--shadow)}
@@ -140,7 +140,7 @@ footer{margin-top:20px;font-size:11.5px;color:var(--ink-faint);line-height:1.6}
     <div class="kpi"><b>27</b><span>countries</span></div>
     <div class="kpi"><b>108</b><span>SDG values<br><b style="font-weight:700">61</b> priority</span></div>
     <div class="kpi"><b>12<span style="font-size:.55em">/14</span></b><span>priority indicators</span></div>
-    <div class="kpi"><b>67<span style="font-size:.55em">%</span></b><span>government-produced</span></div>
+    <div class="kpi" title="Government 67% · UNHCR 22% · World Bank 6% · JIPS 6%"><b>67<span style="font-size:.55em">%</span></b><span>gov-produced<span class="pmix"><i class="pm-gov" style="width:67%"></i><i class="pm-un" style="width:22%"></i><i class="pm-wb" style="width:6%"></i><i class="pm-ji" style="width:6%"></i></span></span></div>
   </div>
 
   <div class="ctrlbar"><div class="seg" id="indSwitch"><button class="on" data-m="p"><span class="dia">◆</span> Priority</button><button data-m="a">All indicators</button></div></div>
@@ -346,7 +346,7 @@ WORLD.forEach(f=>{ if(f.n==="Antarctica")return; const idx=geoToIdx[f.n];
   if(idx===undefined) land+=featPath(f); else dataFeats.push([f,idx]); });
 g+=`<path d="${land}" fill="var(--land)" stroke="var(--land-line)" stroke-width="0.5" stroke-linejoin="round" fill-rule="evenodd"/>`;
 dataFeats.forEach(([f,idx])=>{ const tr=tier(D[idx][0])||"data";
-  g+=`<g class="bub" data-i="${idx}"><path class="cpath" d="${featPath(f)}" fill="${TIERFILL[tr]}" stroke="var(--panel)" stroke-width="0.6" stroke-linejoin="round" fill-rule="evenodd"/></g>`; });
+  g+=`<g class="bub" data-i="${idx}"><path class="cpath" d="${featPath(f)}" fill="var(--hasdata)" stroke="var(--panel)" stroke-width="0.6" stroke-linejoin="round" fill-rule="evenodd"/></g>`; });
 const DODGE={"Lebanon":[-11,-12],"State of Palestine":[12,11],"Jordan":[16,4]}; dataFeats.forEach(([f,idx])=>{ const nm=D[idx][0]; const tr=tier(nm)||"data"; const c=proj(D[idx][2],D[idx][1]); const off=DODGE[nm]||[0,0]; const dx=(c[0]+off[0]), dy=(c[1]+off[1]); const lead=(off[0]||off[1])?`<line class="clead" x1="${c[0].toFixed(1)}" y1="${c[1].toFixed(1)}" x2="${dx.toFixed(1)}" y2="${dy.toFixed(1)}"/>`:""; g+=`<g class="bub" data-i="${idx}">${lead}<circle class="chalo" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.4"/><circle class="cdot cdot-${tr}" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.4"/></g>`; }); [["LATIN AMERICA",-18,-62],["EUROPE",60,20],["W. AFRICA",7,-9],["E. AFRICA",1,40],["MENA",29,46],["S. & S-E ASIA",16,102]].forEach(([t,la,lo])=>{const q=proj(lo,la);g+=`<text class="region" x="${q[0]}" y="${q[1]}" text-anchor="middle">${t}</text>`;});
 D.forEach((d,i)=>{ if(!tier(d[0]))return; const q=proj(d[2],d[1]); const o2=DODGE[d[0]]||[0,0]; g+=`<text class="lbl" x="${(q[0]+o2[0]).toFixed(1)}" y="${(q[1]+o2[1]+13).toFixed(1)}" text-anchor="middle">${SHORT[d[0]]||d[0]}</text>`; });
 svg.innerHTML=g;

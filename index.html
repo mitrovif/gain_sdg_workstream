@@ -24,7 +24,7 @@ h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.025em;margin:
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 16px;box-shadow:var(--shadow)}
 .kpi b{display:block;font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1}
 .kpi b i{font-style:normal;font-size:.5em;color:var(--faint);font-weight:600}
-.kpi span{font-size:12px;color:var(--soft);margin-top:5px;display:block}
+.kpi span{font-size:12px;color:var(--soft);margin-top:5px;display:block}.pmix{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:7px;width:100%;gap:1px}.pmix i{display:block;height:100%}.pm-gov{background:var(--accent)}.pm-un{background:var(--accent2)}.pm-wb{background:var(--faint)}.pm-ji{background:var(--gold)}
 .maphero{display:block;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:var(--panel);text-decoration:none;color:inherit}
 .maphero .frame{height:520px;border:0;width:100%;display:block;background:var(--bg)}
 .maphero .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
@@ -70,7 +70,7 @@ footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);font-si
     <div class="kpi"><b>27</b><span>countries</span></div>
     <div class="kpi"><b>108</b><span>SDG values<br><b style="color:var(--ink)">61</b> priority</span></div>
     <div class="kpi"><b>12<i>/14</i></b><span>priority indicators</span></div>
-    <div class="kpi"><b>67<i>%</i></b><span>government-produced</span></div>
+    <div class="kpi" title="Government 67% · UNHCR 22% · World Bank 6% · JIPS 6%"><b>67<i>%</i></b><span>gov-produced<span class="pmix"><i class="pm-gov" style="width:67%"></i><i class="pm-un" style="width:22%"></i><i class="pm-wb" style="width:6%"></i><i class="pm-ji" style="width:6%"></i></span></span></div>
   </div>
 
   <a class="maphero" href="sdg-map.html">
