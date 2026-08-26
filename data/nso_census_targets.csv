@@ -1,0 +1,13 @@
+gain_example,country,source,ask_who,population,ask,status
+ex105,Jordan,Labour Force Survey 2024,Department of Statistics (DoS),refugees,Non-Jordanian/refugee microdata (informal-sector module 8.3.1 + refugee unemployment 8.5.2),reach out
+ex218,Armenia,2022 Population Census,ArmStat,displaced (NK),SDG tabulation for NK-displaced (housing/education/employment),reach out
+ex123,Georgia,Population Census,GeoStat,refugees;idps;stateless,Refugee/IDP/stateless disaggregation of census SDG variables,reach out
+ex030,Djibouti,RGPH-3 Census + Living Conditions Survey,INSTAD,refugees;idps;stateless,Refugee/IDP/stateless tables (Ali Addeh/Holl-Holl),reach out
+ex026,Chad,Census / ECOSIT,INSEED,refugees;idps,Refugee & IDP disaggregation (Lake Chad; Sudanese/CAR refugees),reach out
+ex370,Cote d'Ivoire,RGPH 2020 + migration survey,INS,idps;returnees,IDP/returnee tables,reach out
+ex217,Mali,permanent household survey,INSTAT,refugees;idps,IDP disaggregation once integrated (2025),reach out
+ex208,Cambodia,Inter-Censal Population Survey,NIS,idps,IDP disaggregation,reach out
+ex287,Moldova,statistics / census,NBS,refugees;idps;stateless,Refugee/IDP/stateless disaggregation,reach out
+ex397,South Africa,Census 2022,Stats SA,refugees,Refugee/asylum SDG module (identifier present in Census 2022),reach out
+ex007,Kazakhstan,Census 2021,Agency of Statistics,unclear,Confirm whether displacement captured; request custom tabulation,reach out
+ex285,Mexico,ENADID / ENVIPE,INEGI,idps,IDP-disaggregated indicators (violence-induced displacement),reach out
