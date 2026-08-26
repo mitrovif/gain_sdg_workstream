@@ -1,0 +1,11 @@
+gain_example,country,survey,ask_who,population,what_we_need,status,sdg_potential
+ex295,Bangladesh,MICS7 2025 (national) + camp instrument,Bangladesh Bureau of Statistics (BBS) / UNHCR,Rohingya refugees,National MICS7 microdata in hand but EXCLUDES the camps (no Rohingya/camp flag); request the camp-specific Cox's Bazar / Bhasan Char instrument,reach out,"4.1.1,2.2.1,6.1.1,6.2.1,7.1.1,11.1.1,16.9.1"
+ex251,Mauritania,MICS 2026,ANSADE,refugees,Catalog metadata in hand; request disaggregated tables or microdata,partial (metadata),"6.1.1,6.2.1,16.9.1"
+ex258,Lebanon,MICS 2023 Sub-National (Syrians),Central Administration of Statistics (CAS),Syrian refugees,On map from snapshot; request full Survey Findings Report / microdata for 4.1.1 learning,partial (on map),"4.1.1"
+ex062,State of Palestine,MICS,PCBS,refugees; IDPs,Request displacement-disaggregated tables or microdata,reach out,"6.1.1,7.1.1,16.9.1"
+ex085,Central African Republic,MICS 2025,ICASEES (+ UNHCR/JDC),IDPs; stateless; returnees,In design/fieldwork — request disaggregated results when released,reach out,"11.1.1,16.9.1"
+ex296,Central African Republic,MICS (JDC inclusion project),ICASEES (+ WB-UNHCR JDC),refugees; IDPs,Request inclusion outputs / microdata,reach out,"11.1.1,16.9.1"
+ex110,Cameroon,MICS6,INS Cameroon (+ UNHCR),refugees; IDPs,Collection Q1 2026 — request disaggregated results when released,reach out,"5.x,8.x"
+ex120,Burkina Faso,MICS 2026,INSD,IDPs,Upcoming — request IDP-disaggregated results when released,reach out,"2.2.1,6.1.1,7.1.1"
+ex260,South Sudan,MICS Round 7,National Bureau of Statistics (NBS),IDPs,Completed — request microdata / IDP-disaggregated tables,reach out,"2.2.1,6.1.1,7.1.1,16.9.1"
+ex310,Zimbabwe,MICS (Tongogara refugee settlement),ZIMSTAT,refugees,Request settlement-disaggregated results / microdata,reach out,"10.3.1,11.1.1,16.9.1"
