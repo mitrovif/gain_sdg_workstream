@@ -84,7 +84,7 @@ svg{display:block;width:100%;height:auto}
 .tip .smeta .ptag{font-weight:700}
 .tip .smeta .ptag.pr-gov{color:#3ec98d}
 .tip .smeta .ptag.pr-unhcr{color:#5aa9e6}
-.tip .smeta .ptag.pr-wb{color:#aeb6c2}.pr-jips{color:#c8912f}
+.tip .smeta .ptag.pr-wb{color:#aeb6c2}.pr-jips{color:#c8912f}.astk{color:var(--gold);font-weight:800;font-size:.85em;cursor:help;margin-left:1px}
 .tip .smeta .gmk{color:#e0b24e;font-weight:700;margin:0 1px}
 .tip .smeta .mmk{color:#aeb6c2;font-style:italic}
 .tip .smeta .hostv{margin-left:6px;color:#9fb4c8}
@@ -153,7 +153,7 @@ footer{margin-top:20px;font-size:11.5px;color:var(--ink-faint);line-height:1.6}
       <span class="mk"><span class="sw" style="background:var(--fill-calc)"></span> calculated from microdata</span>
       <span class="mk"><span class="sw" style="background:var(--fill-rep)"></span> extracted from reports</span>
       <span class="mk"><span class="sw" style="background:var(--fill-data)"></span> data held, no value yet</span>
-      <span class="mk"><span class="sw" style="background:var(--land)"></span> no data</span>
+      <span class="mk"><span class="sw" style="background:var(--land)"></span> no data</span> <span class="mk"><span class="astk">*</span> 6.1.1 basic-water proxy — not E. coli tested</span>
     </div>
   </div>
 
@@ -294,6 +294,7 @@ function mkRow(c,v,tg,m){
   const g=parseInt(c);
   const prod=producer(m&&m.s);
   const ptag=prod?`<span class="ptag pr-${prod.who.toLowerCase()}">${prod.who}${prod.via?` ·${prod.via}`:""}</span> `:"";
+  const bw=(c==="6.1.1" && !/safely managed|coli/i.test((m&&m.s)||""));
   const parts=[]; if(m){if(m.s)parts.push(m.s); if(m.y)parts.push(m.y);}
   const sub=parts.join(" · ")||`SDG ${c}`;
   const nv=Math.max(0,Math.min(100,parseFloat(String(v).replace(/[^0-9.]/g,''))||0));
@@ -303,7 +304,7 @@ function mkRow(c,v,tg,m){
   const host=hasH?`<span class="hostv">host ${m.h}</span>`:"";
   return `<div class="srow">${ICON[g]?`<img class="scard" src="${ICON[g]}" alt="SDG ${g}">`:`<div class="scard" style="background:${SDG[g]||'#888'}">${g}</div>`}`+
     `<div class="sbody">`+
-      `<div class="stop"><b class="sname">${PRIORITY.has(c)?`<span class="prio" title="EGRISS priority indicator">◆</span>`:""}${NAMES[c]||c}</b><span class="sval">${v}<span class="smk ${tg}">${tg}</span></span></div>`+
+      `<div class="stop"><b class="sname">${PRIORITY.has(c)?`<span class="prio" title="EGRISS priority indicator">◆</span>`:""}${NAMES[c]||c}</b><span class="sval">${v}${bw?`<sup class="astk" title="Basic-water proxy (improved source, ≤30 min) — NOT safely managed; no water-quality (E. coli) test">*</sup>`:""}<span class="smk ${tg}">${tg}</span></span></div>`+
       `<div class="vbar"><i style="width:${nv}%;background:${SDG[g]||'#888'}"></i>${hmark}</div>`+
       `<div class="smeta">${ptag}${sub} ${(m&&m.g===0)?`<span class="mmk" title="Matched companion dataset — not a GAIN example">matched</span>`:`<span class="gmk" title="From a GAIN example">✻</span>`}${host}</div>`+
     `</div></div>`;
