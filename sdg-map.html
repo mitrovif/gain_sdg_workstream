@@ -35,7 +35,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",
 h1{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:.15em 0 .1em}
 .sub{color:var(--ink-soft);margin:0 0 18px;max-width:64ch;font-size:.95rem}
 .mapcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px;position:relative}
-.mapwrap{position:relative;width:100%;border-radius:10px}
+.mapwrap{position:relative;width:100%;border-radius:10px}#map{touch-action:none;cursor:grab}.zoomctl{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:5px;z-index:6}.zoomctl button{width:31px;height:31px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;line-height:1;font-family:"IBM Plex Sans",sans-serif}.zoomctl button:hover{background:var(--hasdata);border-color:var(--accent)}.zoomhint{position:absolute;bottom:9px;left:12px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--ink-faint);opacity:.75;pointer-events:none;background:color-mix(in srgb,var(--panel) 70%,transparent);padding:2px 7px;border-radius:5px}
 .mapwrap svg{border-radius:10px}
 svg{display:block;width:100%;height:auto}
 .legend{display:flex;flex-wrap:wrap;gap:20px;align-items:center;padding:12px 14px 4px;font-size:12px;color:var(--ink-soft)}
@@ -146,7 +146,7 @@ footer{margin-top:20px;font-size:11.5px;color:var(--ink-faint);line-height:1.6}
   <div class="ctrlbar"><div class="seg" id="indSwitch"><button class="on" data-m="p"><span class="dia">◆</span> Priority</button><button data-m="a">All indicators</button></div></div>
       <div class="mapcard">
     <div class="mapwrap" id="mapwrap">
-      <svg id="map" viewBox="0 0 1000 500" role="img" aria-label="World map of GAIN data coverage by country"></svg>
+      <svg id="map" viewBox="0 0 1000 500" role="img" aria-label="World map of GAIN data coverage by country"></svg><div class="zoomctl" id="zoomctl"><button data-z="in" title="Zoom in">+</button><button data-z="out" title="Zoom out">−</button><button data-z="reset" title="Reset view">⤢</button></div><div class="zoomhint">scroll to zoom · drag to pan</div>
       <div class="tip" id="tip"></div>
     </div>
     <div class="legend">
@@ -348,7 +348,7 @@ g+=`<path d="${land}" fill="var(--land)" stroke="var(--land-line)" stroke-width=
 dataFeats.forEach(([f,idx])=>{ const tr=tier(D[idx][0])||"data";
   g+=`<g class="bub" data-i="${idx}"><path class="cpath" d="${featPath(f)}" fill="var(--hasdata)" stroke="var(--panel)" stroke-width="0.6" stroke-linejoin="round" fill-rule="evenodd"/></g>`; });
 const DODGE={"Lebanon":[-11,-12],"State of Palestine":[12,11],"Jordan":[16,4]}; dataFeats.forEach(([f,idx])=>{ const nm=D[idx][0]; const tr=tier(nm)||"data"; const c=proj(D[idx][2],D[idx][1]); const off=DODGE[nm]||[0,0]; const dx=(c[0]+off[0]), dy=(c[1]+off[1]); const lead=(off[0]||off[1])?`<line class="clead" x1="${c[0].toFixed(1)}" y1="${c[1].toFixed(1)}" x2="${dx.toFixed(1)}" y2="${dy.toFixed(1)}"/>`:""; g+=`<g class="bub" data-i="${idx}">${lead}<circle class="chalo" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.4"/><circle class="cdot cdot-${tr}" cx="${dx.toFixed(1)}" cy="${dy.toFixed(1)}" r="5.4"/></g>`; }); [["LATIN AMERICA",-18,-62],["EUROPE",60,20],["W. AFRICA",7,-9],["E. AFRICA",1,40],["MENA",29,46],["S. & S-E ASIA",16,102]].forEach(([t,la,lo])=>{const q=proj(lo,la);g+=`<text class="region" x="${q[0]}" y="${q[1]}" text-anchor="middle">${t}</text>`;});
-D.forEach((d,i)=>{ if(!tier(d[0]))return; const q=proj(d[2],d[1]); const o2=DODGE[d[0]]||[0,0]; g+=`<text class="lbl" x="${(q[0]+o2[0]).toFixed(1)}" y="${(q[1]+o2[1]+13).toFixed(1)}" text-anchor="middle">${SHORT[d[0]]||d[0]}</text>`; });
+D.forEach((d,i)=>{ const tt=tier(d[0]); if(!tt||tt==="data")return; const q=proj(d[2],d[1]); const o2=DODGE[d[0]]||[0,0]; g+=`<text class="lbl" x="${(q[0]+o2[0]).toFixed(1)}" y="${(q[1]+o2[1]+13).toFixed(1)}" text-anchor="middle">${SHORT[d[0]]||d[0]}</text>`; });
 svg.innerHTML=g;
 const rows=D;
 const WPX=()=>wrap.getBoundingClientRect().width;
@@ -376,4 +376,18 @@ svg.querySelectorAll(".bub").forEach(el=>{
    if(lastNm && tip && tip.style.opacity==1){var nv=nVals(lastNm);
      tip.innerHTML='<div class="hd"><b>'+lastNm+'</b><span class="r">'+(nv?nv+' value'+(nv>1?'s':''):'')+'</span></div> '+sdgCards(lastNm);}
  });})();
+
+(function(){ if(!svg) return; const VBW=1000,VBH=500; let vb={x:0,y:0,w:VBW,h:VBH};
+ const apply=()=>svg.setAttribute("viewBox",`${vb.x.toFixed(1)} ${vb.y.toFixed(1)} ${vb.w.toFixed(1)} ${vb.h.toFixed(1)}`);
+ const clamp=()=>{ vb.x=Math.max(-vb.w*0.15,Math.min(vb.x,VBW-vb.w*0.85)); vb.y=Math.max(-vb.h*0.15,Math.min(vb.y,VBH-vb.h*0.85)); };
+ function zoomAt(px,py,factor){ const r=svg.getBoundingClientRect(); const mx=vb.x+(px-r.left)/r.width*vb.w, my=vb.y+(py-r.top)/r.height*vb.h;
+   let nw=Math.max(150,Math.min(VBW,vb.w*factor)); let nh=nw*(VBH/VBW); vb.x=mx-(mx-vb.x)*(nw/vb.w); vb.y=my-(my-vb.y)*(nh/vb.h); vb.w=nw; vb.h=nh; clamp(); apply(); }
+ svg.addEventListener("wheel",e=>{ e.preventDefault(); zoomAt(e.clientX,e.clientY, e.deltaY>0?1.15:0.87); },{passive:false});
+ let drag=false,mv=false,lx,ly;
+ svg.addEventListener("pointerdown",e=>{ drag=true;mv=false;lx=e.clientX;ly=e.clientY;svg.style.cursor="grabbing"; });
+ window.addEventListener("pointerup",()=>{ drag=false;svg.style.cursor="grab"; });
+ window.addEventListener("pointermove",e=>{ if(!drag)return; if(Math.abs(e.clientX-lx)+Math.abs(e.clientY-ly)>2)mv=true; const r=svg.getBoundingClientRect(); vb.x-=(e.clientX-lx)/r.width*vb.w; vb.y-=(e.clientY-ly)/r.height*vb.h; lx=e.clientX;ly=e.clientY; clamp(); apply(); });
+ const zc=document.getElementById("zoomctl"); if(zc) zc.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b)return; const r=svg.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2; if(b.dataset.z==="in")zoomAt(cx,cy,0.7); else if(b.dataset.z==="out")zoomAt(cx,cy,1.43); else {vb={x:0,y:0,w:VBW,h:VBH};apply();} });
+ apply();
+})();
 </script>
